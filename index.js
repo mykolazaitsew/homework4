@@ -15,3 +15,26 @@ function task1 (i) {
   }
 
 task1(0);
+
+function task2(n) {
+    function arraySum(array) {
+        let sum = 0;
+        for (let element = 0; element < array.length; element++) {
+            sum += array[element];
+        }
+        return sum;
+    }
+
+    for (let i = 1; i <= n; i++) {
+        let nomberS = [];
+        for (let x = 1; x < i; x++) {
+            if (i % x === 0) {
+                nomberS.push(x);
+            }
+        }
+        if (arraySum(nomberS) === i) {
+            console.log(`Число ${i} досконале`);
+        }
+    }
+}
+task2(10000);
