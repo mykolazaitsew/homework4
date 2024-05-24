@@ -14,7 +14,6 @@ function task1 (i) {
     console.log(`Число ${i}${b}${a}`);
   }
 
-task1(0);
 
 function task2(n) {
     function arraySum(array) {
@@ -26,15 +25,35 @@ function task2(n) {
     }
 
     for (let i = 1; i <= n; i++) {
-        let nomberS = [];
+        let num = [];
         for (let x = 1; x < i; x++) {
             if (i % x === 0) {
-                nomberS.push(x);
+                num.push(x);
             }
         }
-        if (arraySum(nomberS) === i) {
+        if (arraySum(num) === i) {
             console.log(`Число ${i} досконале`);
         }
     }
 }
-task2(10000);
+
+
+function task3(height) {
+    let tree = "";
+    for (let i = 1; i <= height; i++) {
+        tree += " ".repeat(height - i);
+        tree += "*".repeat(2 * i - 1);
+         if (i < height) {
+            tree += "\n";
+        }
+    }
+
+    console.log(tree);
+}
+
+
+task1(0);
+task2(10);
+task3(5); 
+
+
